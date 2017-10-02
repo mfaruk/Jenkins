@@ -3,22 +3,22 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        bat(script: 'echo build state', returnStdout: true, returnStatus: true)
+        bat 'echo buildstate'
       }
     }
     stage('deploy') {
       steps {
-        bat(script: 'echo deploy state', returnStatus: true, returnStdout: true)
+        bat 'echo deploystate'
       }
     }
     stage('Test') {
       steps {
-        bat(script: 'echo test stage', returnStatus: true, returnStdout: true)
+        bat 'echo teststage'
       }
     }
     stage('Release') {
       steps {
-        bat(script: 'echo release stage', returnStatus: true, returnStdout: true)
+        bat 'echo releasestage'
       }
     }
   }
