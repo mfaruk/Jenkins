@@ -3,22 +3,17 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        bat 'echo buildstate'
+        echo 'build'
       }
     }
     stage('deploy') {
       steps {
-        bat 'echo deploystate'
+        echo 'deploy'
       }
     }
-    stage('Test') {
+    stage('test') {
       steps {
-        bat 'echo teststage'
-      }
-    }
-    stage('Release') {
-      steps {
-        bat 'echo releasestage'
+        echo 'test'
       }
     }
   }
