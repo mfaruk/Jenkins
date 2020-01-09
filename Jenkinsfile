@@ -1,3 +1,4 @@
+@Library('pipeline-library-demo@master')_
 pipeline {
     agent any
     parameters {
@@ -12,7 +13,6 @@ pipeline {
                 echo "Deploying ${params.RELEASE_VERSION} in ${env.ENV_STACK}"
             }
         }        
-    @Library('pipeline-library-demo@master')_
     stage('Demo') {
        echo 'Hello world'
        sayHello 'Dave'
