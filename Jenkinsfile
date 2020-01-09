@@ -1,4 +1,4 @@
-
+//parallel example
 pipeline {
 agent none
 stages {
