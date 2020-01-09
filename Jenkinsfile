@@ -1,35 +1,17 @@
 pipeline {
     agent any
-    tools { 
-        maven 'Maven3'
+    parameters {
+        string(name: 'RELEASE_VERSION', defaultValue: '1.0.0', description: 'Application git release tag version')
     }
+    environment { 
+        ENV_STACK = 'staging'
+    }    
     stages {
-        stage ('Initialize') {
+        stage('Example') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                    mvn --version
-                    ''' 
+                echo "Deploying ${params.RELEASE_VERSION} in ${env.ENV_STACK}"
             }
         }
-
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
-            }
-        }
- 
     }
-    post {
-        always {
-            echo 'This will always run'
-        }
-        success {
-            echo 'This will run only if successful'
-        }
-        failure {
-            echo 'This will run only if failed'
-        }
-   }
 }
+
