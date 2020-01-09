@@ -8,6 +8,7 @@ pipeline {
         ENV_STACK = 'staging'
     }    
     stages {
+        parallel{  
         stage('Example') {
             steps {
                 echo "Deploying ${params.RELEASE_VERSION} in ${env.ENV_STACK}"
@@ -18,7 +19,9 @@ pipeline {
                 echo 'Hello world'
                 sayHello 'DaDa'
             }
-     }
+       }
+      }  
+        
     }
 }
 
