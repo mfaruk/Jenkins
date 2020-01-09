@@ -16,7 +16,7 @@ pipeline {
         stage('Demo') {
             steps{
                 echo 'Hello world'
-                sayHello 'Dave'
+                sayHello 'DaDa'
             }
      }
     }
