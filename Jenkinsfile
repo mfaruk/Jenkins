@@ -8,8 +8,8 @@ pipeline {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
-                    echo "Done"
-                ''' 
+                    echo "M2_HOME = ${M2_HOME}"
+                    ''' 
             }
         }
 
