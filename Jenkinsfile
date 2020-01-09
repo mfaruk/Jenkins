@@ -11,7 +11,12 @@ pipeline {
             steps {
                 echo "Deploying ${params.RELEASE_VERSION} in ${env.ENV_STACK}"
             }
-        }
+        }        
+    @Library('pipeline-library-demo')_
+    stage('Demo') {
+       echo 'Hello world'
+       sayHello 'Dave'
+     }
     }
 }
 
