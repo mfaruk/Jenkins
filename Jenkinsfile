@@ -13,9 +13,11 @@ pipeline {
                 echo "Deploying ${params.RELEASE_VERSION} in ${env.ENV_STACK}"
             }
         }        
-    stage('Demo') {
-       echo 'Hello world'
-       sayHello 'Dave'
+        stage('Demo') {
+            steps{
+                echo 'Hello world'
+                sayHello 'Dave'
+            }
      }
     }
 }
